@@ -19,6 +19,11 @@ services:
       - yactvolume:/home/facsimile/yactschedulerdock/files
     ports:
       - 49162:49162
+      
+  yact:
+    build: ../yactdock
+    ports:
+      - 49163:80    
 
 volumes:
   yactvolume:
