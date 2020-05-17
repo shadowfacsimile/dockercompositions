@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  facsite:
+    build: ../facsite
+    ports:
+      - 49160:49160
+
+  yactschedulerdock:
+    build: ../yactschedulerdock
+    volumes:
+      - yactvolume:/home/facsimile/yactschedulerdock/files
+    ports:
+      - 49161:49161
+
+  yactbffdock:
+    build: ../yactbffdock
+    volumes:
+      - yactvolume:/home/facsimile/yactschedulerdock/files
+    ports:
+      - 49162:49162
+
+volumes:
+  yactvolume:
+    external: true
